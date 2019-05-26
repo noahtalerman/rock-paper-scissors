@@ -1,0 +1,47 @@
+body{
+    background: #111112;
+    color: #D1D1DE;
+    font-family: 'Ye Font', Arial, sans-serif;
+}
+.selection-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.selection-btn{
+    margin: 0 5px 0 5px;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    outline: 3px solid #111112;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background:#111112;
+    color: #D1D1DE;
+    font-family: 'Ye Font';
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: outline 0.5s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+button:hover{
+    outline:3px solid #D1D1DE;
+}
+
+.scoreboard{
+    transition: opacity 0.5s ease-in-out;
+}
+
+.restart-button{
+    display: flex;
+    justify-content: center;
+}
+
+.restart-btn{
+    display: none;
+}

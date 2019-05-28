@@ -33,6 +33,18 @@ button:hover{
     outline:3px solid #D1D1DE;
 }
 
+button:focus{
+    outline:3px solid #D1D1DE;
+}
+
+button:disabled{
+    outline: 3px solid #111112;
+}
+
+.counter{
+    transition: opacity 0.5s ease-in-out;
+}
+
 .scoreboard{
     transition: opacity 0.5s ease-in-out;
 }

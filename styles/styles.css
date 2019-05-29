@@ -4,6 +4,10 @@ body{
     font-family: 'Ye Font', Arial, sans-serif;
 }
 
+h1,h2,h3,h4,h5,h6{
+    margin-left: 1%;
+}
+
 .intro-container{
     display: flex;
     justify-content: center;

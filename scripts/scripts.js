@@ -8,7 +8,7 @@ setTimeout(function(){
 }, 3000);
 setTimeout(function(){
     playGame()
-}, 16000);
+}, 20000);
 
 function hideBear(){
     setTimeout(function(){
@@ -26,27 +26,27 @@ function displayBear(){
 };
 
 function displayIntro(){
-    let timeLeft = 12;
+    let timeLeft = 14;
     let announce;
     let banner = document.querySelector('.intro-header');
     setTimeout(function(){
         banner.style.opacity = 1;
     }, 1000);
     let bannerTimer = setInterval(function(){
-        if (timeLeft > 9){
+        if (timeLeft > 11){
             announce = 'WELCOME TO WAVY ROCK, PAPER, SCISSORS';
         }
-        else if (timeLeft == 9){
+        else if (timeLeft == 11){
             banner.style.opacity = 0;
         }
-        else if (timeLeft < 9 && timeLeft > 6){
+        else if (timeLeft < 11 && timeLeft > 7){
             banner.style.opacity = 1;
             announce = 'YOU WILL COMPETE AGAINST A COMPUTER IN THE UTIMATE TEST OF YOUR WAVINESS'
         }
-        else if (timeLeft == 6){
+        else if (timeLeft == 7){
             banner.style.opacity = 0;
         }
-        else if (timeLeft < 6 && timeLeft > 3){
+        else if (timeLeft < 7 && timeLeft > 3){
             banner.style.opacity = 1;
             announce = 'THE GAME IS BEST 3 OUT OF 5'
         }
@@ -62,13 +62,13 @@ function displayIntro(){
         if (timeLeft <= 0){
             clearInterval(bannerTimer);
         }
-    }, 1000);
+    }, `1000`);
     setTimeout(function(){
         banner.style.opacity = 0;
-    }, 14000);
+    }, 16000);
     setTimeout(function(){
         banner.innerHTML = '0';
-    }, 14500);
+    }, 16500);
 };
 
 function playGame(){
@@ -76,9 +76,7 @@ function playGame(){
     //disable restart button, it is hidden now and will be enable at end of game (bottom of scoreboard)
     document.querySelector('.restart-button').disabled = true;
     gameInterface.style.opacity = 1;
-    setTimeout(function(){
-        displayBear();
-    }, 3000);
+    displayBear();
     let selectedButton;
     buttons = (document.getElementsByClassName('selection-btn'));
             

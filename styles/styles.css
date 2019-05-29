@@ -3,6 +3,34 @@ body{
     color: #D1D1DE;
     font-family: 'Ye Font', Arial, sans-serif;
 }
+
+.intro-container{
+    display: flex;
+    justify-content: center;
+}
+
+.intro-header{
+    transition: opacity 0.5s ease-in-out;
+    margin: 50px 0 50px 0;
+}
+
+#ye-bear{
+    width: 100px;
+    height: auto;
+    align-self: center;
+    transition: opacity 0.5s ease-in-out;
+    margin: 9px 0 9px 0;
+}
+
+.game-interface{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.selection-header{
+    transition: opacity 0.5s ease-in-out;
+}
+
 .selection-buttons{
     display: flex;
     justify-content: center;
@@ -26,6 +54,7 @@ button {
     cursor: pointer;
     text-align: center;
     transition: outline 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -55,5 +84,5 @@ button:disabled{
 }
 
 .restart-btn{
-    display: none;
+    opacity: 0;
 }

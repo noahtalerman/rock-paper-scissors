@@ -2,9 +2,83 @@
 let userScore = 0;
 let compScore = 0;
 
-playGame();
+hideBear();
+setTimeout(function(){
+    displayIntro();
+}, 3000);
+setTimeout(function(){
+    playGame()
+}, 16000);
+
+function hideBear(){
+    setTimeout(function(){
+        document.querySelector('#ye-bear').style.opacity = 0;
+        document.querySelector('.intro-header').style.opacity = 0;
+    }, 3000);
+    setTimeout(function(){
+        document.querySelector('#ye-bear').style.display = 'none';
+    }, 3500);
+};
+
+function displayBear(){
+    document.querySelector('#ye-bear').style.display = 'initial';
+    document.querySelector('#ye-bear').style.opacity = 1;
+};
+
+function displayIntro(){
+    let timeLeft = 12;
+    let announce;
+    let banner = document.querySelector('.intro-header');
+    setTimeout(function(){
+        banner.style.opacity = 1;
+    }, 1000);
+    let bannerTimer = setInterval(function(){
+        if (timeLeft > 9){
+            announce = 'WELCOME TO WAVY ROCK, PAPER, SCISSORS';
+        }
+        else if (timeLeft == 9){
+            banner.style.opacity = 0;
+        }
+        else if (timeLeft < 9 && timeLeft > 6){
+            banner.style.opacity = 1;
+            announce = 'YOU WILL COMPETE AGAINST A COMPUTER IN THE UTIMATE TEST OF YOUR WAVINESS'
+        }
+        else if (timeLeft == 6){
+            banner.style.opacity = 0;
+        }
+        else if (timeLeft < 6 && timeLeft > 3){
+            banner.style.opacity = 1;
+            announce = 'THE GAME IS BEST 3 OUT OF 5'
+        }
+        else if (timeLeft == 3){
+            banner.style.opacity = 0;
+        }
+        else if (timeLeft < 3 && timeLeft > 0){
+            banner.style.opacity = 1;
+            announce = 'GOOD LUCK AND GODSPEED'
+        }
+        timeLeft -= 1;
+        banner.innerHTML = announce;
+        if (timeLeft <= 0){
+            clearInterval(bannerTimer);
+        }
+    }, 1000);
+    setTimeout(function(){
+        banner.style.opacity = 0;
+    }, 14000);
+    setTimeout(function(){
+        banner.innerHTML = '0';
+    }, 14500);
+};
 
 function playGame(){
+    let gameInterface = document.querySelector('.game-interface');
+    //disable restart button, it is hidden now and will be enable at end of game (bottom of scoreboard)
+    document.querySelector('.restart-button').disabled = true;
+    gameInterface.style.opacity = 1;
+    setTimeout(function(){
+        displayBear();
+    }, 3000);
     let selectedButton;
     buttons = (document.getElementsByClassName('selection-btn'));
             
@@ -160,12 +234,20 @@ function enableBtns(){
 
 function displayNewGameBtn(){
     let restartBtn = document.querySelector('.restart-btn');
+    restartBtn.style.opacity = 1;
+    restartBtn.disabled = false;
     //reload page when new game button is clicked
     restartBtn.addEventListener('click', function(){
-    location.reload();
+    userScore = 0;
+    compScore = 0;
+    //fade out scoreboard
+    document.querySelector('.scoreboard').style.opacity = 0;
+    //fade out button
+    restartBtn.style.opacity = 0;
+    restartBtn.style.disabled = true;
+    enableBtns();
     });
-    //new game button's initial style = display:hidden
-    restartBtn.style.display = 'initial';
+    //fade out new game button
     return;
 }
 

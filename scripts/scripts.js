@@ -8,7 +8,7 @@ setTimeout(function(){
 }, 3000);
 setTimeout(function(){
     playGame()
-}, 20000);
+}, 21000);
 
 function hideBear(){
     setTimeout(function(){
@@ -62,12 +62,12 @@ function displayIntro(){
         if (timeLeft <= 0){
             clearInterval(bannerTimer);
         }
-    }, `1000`);
+    }, 1000);
     setTimeout(function(){
         banner.style.opacity = 0;
     }, 16000);
     setTimeout(function(){
-        banner.innerHTML = '0';
+        banner.innerHTML = '';
     }, 16500);
 };
 
